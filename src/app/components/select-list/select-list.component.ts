@@ -1,6 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, output, WritableSignal } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { CardListComponent } from '../card-list/card-list.component';
+import { Card } from '../../models/card';
+
+type CardSelection = {
+  card: Card 
+  deckIndex: number
+}
 
 @Component({
   selector: 'app-select-list',
@@ -9,5 +15,18 @@ import { CardListComponent } from '../card-list/card-list.component';
   styleUrl: './select-list.component.scss'
 })
 export class SelectListComponent {
-  cards = inject(DataService).cards
+  cards: WritableSignal<Card[]>
+  service = inject(DataService)
+  sendCardToHome = output<CardSelection>()
+
+  constructor() {
+    this.cards = this.service.cards
+  }
+
+  loadMoreCards() {}
+
+  dispatchSelectionToHome(selection: CardSelection) {
+    console.log('getting selection from select-list')
+    this.sendCardToHome.emit(selection)
+  }
 }

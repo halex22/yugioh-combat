@@ -1,3 +1,8 @@
-<app-select-list>
+<div class="decks-section">
+  <app-deck [cards]="heroDeck()" [playerTitle]="'hero'"/>
+  <app-deck [cards]="foeDeck()" [playerTitle]="'foe'"/>
+</div>
+
+<app-select-list (sendCardToHome)="processUserSelection($event)">
   
 </app-select-list>

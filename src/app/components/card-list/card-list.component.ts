@@ -12,9 +12,10 @@ export class CardListComponent {
 
   cards = input.required<Card[]>()
   AddToDeck = output<{card: Card, deckIndex: number}>()
-  showBtns = input<boolean>()
+  showBtns = input.required<boolean>()
 
   sendAddToDeck(card: Card, deckIndex:number) {
+    console.log('sending from car-list')
     this.AddToDeck.emit({card, deckIndex})
   }
 

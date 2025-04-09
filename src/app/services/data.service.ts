@@ -26,4 +26,8 @@ export class DataService {
     this.cards.set(data.data)
   }
 
+  nextPage() {
+    this.offset.update(prev => prev += this.num())
+  }
+
 }

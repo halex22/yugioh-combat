@@ -5,7 +5,14 @@
 
     li {
         list-style-type: none;
+
+        &:hover {
+            transform: scale(1.5);
+            transition: all 1s;
+        }
     }
+
+
 }
 
 .btn-container{
@@ -41,9 +48,7 @@
     width: 100px;
     height: 150px;
 
-    &:hover {
-        transform: scale(1.1);
-    }
+    
 
 
     img {

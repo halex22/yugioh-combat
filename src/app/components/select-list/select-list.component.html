@@ -1,5 +1,6 @@
 <section>
   <h2>Card Selection</h2>
-  <ul card-list [cards]="cards()" [showBtns]="true"></ul>
+  <button>Load more cards</button>
+  <ul card-list [cards]="cards()" [showBtns]="true" (AddToDeck)="dispatchSelectionToHome($event)"></ul>
 </section>
 
