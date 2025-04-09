@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-import { CardListComponent } from './components/card-list/card-list.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/layout/header/header.component';
+import { FooterComponent } from './components/layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
-  imports: [CardListComponent],
+  imports: [HeaderComponent, HomeComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

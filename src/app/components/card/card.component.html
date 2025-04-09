@@ -1,0 +1,9 @@
+<div class="image-container">
+  <img [src]="card().card_images[0].image_url_small" alt="">
+</div>
+
+
+<div *ngIf="showBtns">
+  <button (click)="sendAddToDeck(0)">add to deck 1</button>
+  <button (click)="sendAddToDeck(1)">add to deck 2</button>
+</div>

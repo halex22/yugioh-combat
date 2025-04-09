@@ -1,3 +1,13 @@
+<li *ngFor="let card of cards()">
+  <div class="image-container">
+    <img [src]="card.card_images[0].image_url_small" alt="">
+  </div>
 
-  <h1 *ngFor="let card of service.cards()">{{card.name}}</h1>
+  <div *ngIf="showBtns" class="btn-container">
+    <button (click)="sendAddToDeck(card,0)">+ Hero's Deck</button>
+    <button (click)="sendAddToDeck(card, 1)">+ Foe's Deck</button>
+  </div>
+</li>
 
+  
+  

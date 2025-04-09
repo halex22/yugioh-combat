@@ -18,12 +18,12 @@ export class DataService {
   }
 
   get url() {
-    return `${this.BASE_URL}?num=${this.num()}&offset=${this.offset()}`
+    return `${this.BASE_URL}?num=${this.num()}&offset=${this.offset()}&type=normal monster`
   }
 
   async getCards(){
     const data = await fetch(this.url).then(res => res.json())
-    this.cards.set(data)
+    this.cards.set(data.data)
   }
 
 }
