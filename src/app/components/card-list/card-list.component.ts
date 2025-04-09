@@ -15,7 +15,6 @@ export class CardListComponent {
   showBtns = input.required<boolean>()
 
   sendAddToDeck(card: Card, deckIndex:number) {
-    console.log('sending from car-list')
     this.AddToDeck.emit({card, deckIndex})
   }
 

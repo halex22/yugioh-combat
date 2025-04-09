@@ -21,7 +21,6 @@ export class HomeComponent {
 
 
   processUserSelection(selection: CardSelection) {
-    console.log('selection has arrive to home')
     const targetDeck = !selection.deckIndex ? this.heroDeck : this.foeDeck;
     targetDeck.update(prev => [...prev, selection.card])
   }

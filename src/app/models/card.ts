@@ -2,6 +2,8 @@ export interface Card {
   id: number
   name: string
   type: string
+  atk?: number
+  def?: number
   humanReadableCardType: string
   frameType: string
   desc: string

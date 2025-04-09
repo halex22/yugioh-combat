@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { Card } from '../../models/card';
 import { CardListComponent } from '../card-list/card-list.component';
 
@@ -11,4 +11,6 @@ import { CardListComponent } from '../card-list/card-list.component';
 export class DeckComponent {
   cards = input<Card[]>([])
   playerTitle = input.required<'hero' | 'foe'>()
+  totalAttack = computed(() => this.cards()
+  .reduce((totalAttack: number, card: Card) => totalAttack + (card.atk || 0) , 0 ))
 }

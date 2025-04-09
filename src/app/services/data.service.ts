@@ -13,6 +13,7 @@ export class DataService {
 
   constructor() { 
     effect(() => {
+      console.log('getting data')
       this.getCards()
     })
   }
@@ -28,6 +29,7 @@ export class DataService {
 
   nextPage() {
     this.offset.update(prev => prev += this.num())
+    console.log('now offset is:', this.offset())
   }
 
 }

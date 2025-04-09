@@ -23,10 +23,11 @@ export class SelectListComponent {
     this.cards = this.service.cards
   }
 
-  loadMoreCards() {}
+  loadMoreCards() {
+    this.service.nextPage()
+  }
 
   dispatchSelectionToHome(selection: CardSelection) {
-    console.log('getting selection from select-list')
     this.sendCardToHome.emit(selection)
   }
 }
