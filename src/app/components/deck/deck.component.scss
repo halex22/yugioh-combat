@@ -7,7 +7,16 @@
 }
 
 h2 {
+    width: 15ch;
     text-transform: capitalize;
     font-weight: bolder;
-    text-align: center;
+    text-wrap: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20);
+}
+
+@keyframes typing {
+    from {
+        width: 0ch;
+    }
 }
